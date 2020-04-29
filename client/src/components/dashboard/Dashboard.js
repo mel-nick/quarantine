@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Spinner from '../layout/Spinner'
@@ -12,11 +12,17 @@ const Dashboard = ({getPosts, post: {posts, loading} }) => {
         getPosts()
     }, [getPosts])
 
+    const [displayForm, toggleForm] = useState(false)
+    
     return loading ? <Spinner /> :(
         <Fragment>
             <h1 className="text-primary">Temperature records</h1>
-           
-            <PostForm />
+            <div className="my-2">
+                <button onClick={()=>toggleForm(!displayForm)} type="button" className="btn btn-primary">
+                   Add new Record
+                </button>
+            </div>
+            {displayForm && <PostForm />}
             <div className="table-wrap">
                 <table className="table data-table table-responsive">
                     <thead>
