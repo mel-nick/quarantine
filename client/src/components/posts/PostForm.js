@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, Fragment} from 'react'
 import PropTypes from 'prop-types'
 import { connect} from 'react-redux'
 import { addPost } from '../../actions/post'
@@ -41,10 +41,23 @@ const PostForm = ({addPost}) => {
         }}
             className="form my-1 post-form">
                 <div className="form-group">
-                    <input type="text" placeholder="* Employee full name" name="employee_name" value={employee_name} onChange={e=>onChange(e)} required />
+                    <input type="text" 
+                           placeholder="* Employee full name" 
+                           name="employee_name" 
+                           value={employee_name} 
+                           onChange={e=>onChange(e)}
+                           autoComplete="off"
+                           required 
+                    />
                 </div>
                 <div className="form-group">
-                    <input type="text" placeholder="* Body temperature" name="temp" value={temp} onChange={e=>onChange(e)} required />
+                    <input type="number" step="any" 
+                            placeholder="* Body temperature" 
+                            name="temp" value={temp} 
+                            onChange={e=>onChange(e)}
+                            autoComplete="off"
+                            required 
+                    />
                 </div>
                 <div className="form-group">
                     <PlacesAutocomplete
@@ -53,29 +66,36 @@ const PostForm = ({addPost}) => {
                         onSelect={handleCitySelect}
                     >
                         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-                        <div>
+                            <Fragment>
                             <input {...getInputProps({ placeholder: "City e.g. Kyiv" })} />
-                        <div>
-                        {loading ? <div>...loading</div> : null}
+                            
+                            <div className="d-down">
+                                {loading ? <div>...loading</div> : null}
+                                    {suggestions.map(suggestion => {
+                                    const style = {
+                                            backgroundColor: suggestion.active ? "#41b6e6" : "#f4f4f4",
+                                            margin:"2px 5px" 
+                                    };
 
-                        {suggestions.map(suggestion => {
-                        const style = {
-                                backgroundColor: suggestion.active ? "#41b6e6" : "#fff"
-                        };
-
-                            return (
-                            <div {...getSuggestionItemProps(suggestion, { style })}>
-                                {suggestion.description}
+                                        return (
+                                        <div {...getSuggestionItemProps(suggestion, { style })}>
+                                            {suggestion.description}
+                                        </div>
+                                        );
+                                    })}
                             </div>
-                            );
-                        })}
-                            </div>
-                        </div>
+                        </Fragment>
                     )}
                     </PlacesAutocomplete>
                </div>
                 <div className="form-group">
-                    <input type="text" placeholder="Leave a comment" name="comment" value={comment} onChange={e=>onChange(e)}/>
+                    <input type="text" 
+                            placeholder="Leave a comment" 
+                            name="comment" 
+                            value={comment} 
+                            onChange={e=>onChange(e)}
+                            autoComplete="off"
+                    />
                 </div>
                 <input type="submit" className="btn btn-dark my-1 post-submit" defaultValue="Submit" />
             </form>
