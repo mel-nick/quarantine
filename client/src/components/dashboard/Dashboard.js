@@ -55,7 +55,8 @@ const Dashboard = ({getPosts, post: {posts, loading} }) => {
                                         <th>{post.employee_name}</th>
                                         <td>{post.author}</td>
                                         <td>{post.city}</td>
-                                        <td>{post.temp}</td>
+                                        <td className={`${  post.temp > 36.6 && post.temp < 37.5 ? 'bg-warning' 
+                                        :  post.temp > 37.5 ? 'bg-danger' : 'bg-success'}`}>{post.temp}</td>
                                         <td>{post.comment}</td>
                                         <td><Moment format="DD-MMM-YYYY HH:mm:ss">{post.date }</Moment></td>
                                 </tr>

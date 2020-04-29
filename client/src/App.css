@@ -4,6 +4,7 @@
   --dark-color: #343a40;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
+  --warning-color: orange;
   --success-color: #28a745;
 }
 
@@ -237,7 +238,9 @@ img {
   background: #ccc;
   margin: 1.5rem 0;
 }
-
+.bg-warning {
+  background: var(--warning-color);
+}
 /* Overlay */
 .dark-overlay {
   background-color: rgba(0, 0, 0, 0.6);
