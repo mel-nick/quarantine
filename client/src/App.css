@@ -78,24 +78,31 @@ img {
 .p {
   padding: 0.5rem;
 }
+
 .p-1 {
   padding: 1rem;
 }
+
 .p-2 {
   padding: 2rem;
 }
+
 .p-3 {
   padding: 3rem;
 }
+
 .py {
   padding: 0.5rem 0;
 }
+
 .py-1 {
   padding: 1rem 0;
 }
+
 .py-2 {
   padding: 2rem 0;
 }
+
 .py-3 {
   padding: 3rem 0;
 }
@@ -104,24 +111,31 @@ img {
 .m {
   margin: 0.5rem;
 }
+
 .m-1 {
   margin: 1rem;
 }
+
 .m-2 {
   margin: 2rem;
 }
+
 .m-3 {
   margin: 3rem;
 }
+
 .my {
   margin: 0.5rem 0;
 }
+
 .my-1 {
   margin: 1rem 0;
 }
+
 .my-2 {
   margin: 2rem 0;
 }
+
 .my-3 {
   margin: 3rem 0;
 }
@@ -244,7 +258,8 @@ img {
   margin-top: 0.3rem;
   color: #888;
 }
-.d-down{
+
+.d-down {
   /* border-left: 1px solid black; */
   position: absolute;
   background-color: #fff;
@@ -269,6 +284,13 @@ button {
   font: inherit;
 }
 
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
 
 .table th,
 .table td {
@@ -279,8 +301,9 @@ button {
 .table th {
   background: var(--light-color);
 }
+
 .data-table {
-  margin:0 auto;
+  margin: 0 auto;
 }
 
 /* Navbar */
@@ -313,7 +336,8 @@ button {
 
 .navbar .welcome span {
   margin-right: 0.6rem;
-} 
+}
+
 .nav-user-image {
   max-width: 30px;
   max-height: 30px;
@@ -346,10 +370,11 @@ button {
   flex-wrap: wrap;
 }
 
-.post-submit{
+.post-submit {
   flex-basis: 25%;
 }
-.post-form .form-group{
+
+.post-form .form-group {
   flex-basis: 45%;
 }
 
@@ -366,7 +391,7 @@ button {
   align-items: center;
 }
 
-.post > div:first-child {
+.post>div:first-child {
   text-align: center;
 }
 
@@ -388,15 +413,17 @@ button {
   font-size: 0.8rem;
   margin-bottom: 0.5rem;
 }
-.like-btn > span,
-.dlike-btn > span {
-  margin-left: 0.3em ;
+
+.like-btn>span,
+.dlike-btn>span {
+  margin-left: 0.3em;
 }
 
 /* Spinner */
 .spinner-wrapper {
   height: 100vh;
 }
+
 .spinner {
   display: inline-block;
   width: 80px;
@@ -410,10 +437,12 @@ button {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
 }
+
 .spinner div {
   transform-origin: 40px 40px;
   animation: spinner 1.2s linear infinite;
 }
+
 .spinner div:after {
   content: " ";
   display: block;
@@ -425,6 +454,7 @@ button {
   border-radius: 20%;
   background: #03abfc;
 }
+
 .spinner div:nth-child(1) {
   transform: rotate(0deg);
   animation-delay: -1.1s;
@@ -433,6 +463,7 @@ button {
   -ms-transform: rotate(0deg);
   -o-transform: rotate(0deg);
 }
+
 .spinner div:nth-child(2) {
   transform: rotate(30deg);
   animation-delay: -1s;
@@ -441,6 +472,7 @@ button {
   -ms-transform: rotate(30deg);
   -o-transform: rotate(30deg);
 }
+
 .spinner div:nth-child(3) {
   transform: rotate(60deg);
   animation-delay: -0.9s;
@@ -449,6 +481,7 @@ button {
   -ms-transform: rotate(60deg);
   -o-transform: rotate(60deg);
 }
+
 .spinner div:nth-child(4) {
   transform: rotate(90deg);
   animation-delay: -0.8s;
@@ -457,6 +490,7 @@ button {
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
 }
+
 .spinner div:nth-child(5) {
   transform: rotate(120deg);
   animation-delay: -0.7s;
@@ -465,6 +499,7 @@ button {
   -ms-transform: rotate(120deg);
   -o-transform: rotate(120deg);
 }
+
 .spinner div:nth-child(6) {
   transform: rotate(150deg);
   animation-delay: -0.6s;
@@ -473,6 +508,7 @@ button {
   -ms-transform: rotate(150deg);
   -o-transform: rotate(150deg);
 }
+
 .spinner div:nth-child(7) {
   transform: rotate(180deg);
   animation-delay: -0.5s;
@@ -481,6 +517,7 @@ button {
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
 }
+
 .spinner div:nth-child(8) {
   transform: rotate(210deg);
   animation-delay: -0.4s;
@@ -489,6 +526,7 @@ button {
   -ms-transform: rotate(210deg);
   -o-transform: rotate(210deg);
 }
+
 .spinner div:nth-child(9) {
   transform: rotate(240deg);
   animation-delay: -0.3s;
@@ -497,6 +535,7 @@ button {
   -ms-transform: rotate(240deg);
   -o-transform: rotate(240deg);
 }
+
 .spinner div:nth-child(10) {
   transform: rotate(270deg);
   animation-delay: -0.2s;
@@ -505,6 +544,7 @@ button {
   -ms-transform: rotate(270deg);
   -o-transform: rotate(270deg);
 }
+
 .spinner div:nth-child(11) {
   transform: rotate(300deg);
   animation-delay: -0.1s;
@@ -513,6 +553,7 @@ button {
   -ms-transform: rotate(300deg);
   -o-transform: rotate(300deg);
 }
+
 .spinner div:nth-child(12) {
   transform: rotate(330deg);
   animation-delay: 0s;
@@ -521,10 +562,12 @@ button {
   -ms-transform: rotate(330deg);
   -o-transform: rotate(330deg);
 }
+
 @keyframes spinner {
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -564,7 +607,7 @@ button {
     text-align: center;
     justify-content: center;
   }
- 
+
   .navbar h1 {
     margin-bottom: 1rem;
   }
@@ -578,14 +621,17 @@ button {
   .post {
     grid-template-columns: 1fr;
   }
+
   .post a,
   .post button {
     padding: 0.3rem 0.4rem;
   }
-  .post-submit{
+
+  .post-submit {
     flex-basis: 20%;
   }
-  .post-form .form-group{
+
+  .post-form .form-group {
     flex-basis: 100%;
   }
 }

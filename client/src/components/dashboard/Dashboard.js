@@ -18,7 +18,7 @@ const Dashboard = ({getPosts, post: {posts, loading} }) => {
            
             <PostForm />
             <div className="table-wrap">
-                <table className="table data-table">
+                <table className="table data-table table-responsive">
                     <thead>
                         <tr>
                         <th>Employee full name</th>
