@@ -21,6 +21,10 @@ const PostForm = ({addPost}) => {
       setCity(value);
     };
 
+    const searchOptions = {
+        componentRestrictions:  {country: "UA"}
+      }
+
     const { temp, comment, employee_name } = formData;
 
 
@@ -64,8 +68,11 @@ const PostForm = ({addPost}) => {
                         value={city}
                         onChange={setCity}
                         onSelect={handleCitySelect}
+                        searchOptions={searchOptions}
                     >
-                        {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+                        {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => {
+                            console.log(suggestions)
+                            return(
                             <Fragment>
                             <input {...getInputProps({ placeholder: "City e.g. Kyiv" })} />
                             
@@ -85,7 +92,7 @@ const PostForm = ({addPost}) => {
                                     })}
                             </div>
                         </Fragment>
-                    )}
+                    )}}
                     </PlacesAutocomplete>
                </div>
                 <div className="form-group">

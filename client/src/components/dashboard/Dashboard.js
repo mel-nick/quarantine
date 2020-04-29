@@ -6,7 +6,6 @@ import { getPosts } from '../../actions/post'
 import PostForm from '../posts/PostForm'
 import Moment from 'react-moment'
 import Pagination from '../pagination/Pagination'
-// import 'moment-timezone';
 
 const Dashboard = ({getPosts, post: {posts, loading} }) => {
     const [currentPage, setCurrentPage] = useState(1);
