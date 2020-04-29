@@ -5,6 +5,7 @@ import Spinner from '../layout/Spinner'
 import { getPosts } from '../../actions/post'
 import PostForm from '../posts/PostForm'
 import Moment from 'react-moment'
+import 'moment-timezone';
 
 const Dashboard = ({getPosts, post: {posts, loading} }) => {
     useEffect(() => {
@@ -29,16 +30,18 @@ const Dashboard = ({getPosts, post: {posts, loading} }) => {
                         </tr>
                     </thead>
                     <tbody>
-                    {posts.map(post =>(
+                    {posts.map(post =>{
+                       return (
+                        
                                 <tr key={post._id}>
                                         <th>{post.employee_name}</th>
                                         <td>{post.author}</td>
                                         <td>{post.city}</td>
                                         <td>{post.temp}</td>
                                         <td>{post.comment}</td>
-                                        <td><Moment format="DD-MMM-YYYY HH:MM:SS">{post.date}</Moment></td>
+                                        <td><Moment format="DD-MMM-YYYY HH:mm:ss">{post.date }</Moment></td>
                                 </tr>
-                        ))}
+                        )})}
                     </tbody>
                 </table>
             </div>

@@ -5,9 +5,11 @@
   "dependencies": {
     "axios": "^0.19.0",
     "moment": "^2.24.0",
+    "moment-timezone": "^0.5.28",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-moment": "^0.9.2",
+    "react-moment": "^0.9.7",
+    "react-places-autocomplete": "^7.2.1",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.0",
     "react-scripts": "^3.4.1",
