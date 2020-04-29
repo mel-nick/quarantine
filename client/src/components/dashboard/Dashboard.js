@@ -5,15 +5,27 @@ import Spinner from '../layout/Spinner'
 import { getPosts } from '../../actions/post'
 import PostForm from '../posts/PostForm'
 import Moment from 'react-moment'
-import 'moment-timezone';
+import Pagination from '../pagination/Pagination'
+// import 'moment-timezone';
 
 const Dashboard = ({getPosts, post: {posts, loading} }) => {
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(10);
+
     useEffect(() => {
         getPosts()
-    }, [getPosts])
+    }, [getPosts, currentPage, postsPerPage])
 
     const [displayForm, toggleForm] = useState(false)
     
+    //Get current users
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
+
+    //change page
+    const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
     return loading ? <Spinner /> :(
         <Fragment>
             <h1 className="text-primary">Temperature records</h1>
@@ -36,7 +48,7 @@ const Dashboard = ({getPosts, post: {posts, loading} }) => {
                         </tr>
                     </thead>
                     <tbody>
-                    {posts.map(post =>{
+                    {currentPosts.map(post =>{
                        return (
                         
                                 <tr key={post._id}>
@@ -51,6 +63,12 @@ const Dashboard = ({getPosts, post: {posts, loading} }) => {
                     </tbody>
                 </table>
             </div>
+            <Pagination 
+                postsPerPage={postsPerPage} 
+                totalPosts={posts.length} 
+                paginate={paginate}
+                currentPage={currentPage}
+            />
         </Fragment>
     )
 }
