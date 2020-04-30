@@ -8,7 +8,7 @@ Link on working project: https://quarantine-19.herokuapp.com
 
 2. Go to `client` forder and run `npm install`
 
-3. Go back to root folder and create `.env  file`
+3. Go back to root folder and create `.env ` file
     - declare `JWT_SECRET` and `MONGODB_URI`
 
 4. To run dev-server run `npm run dev` from root folder. Script will start both server and client 
