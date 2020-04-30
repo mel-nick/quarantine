@@ -1,6 +1,6 @@
 /* Global Styles */
 :root {
-  --primary-color: #03abfc;
+  --primary-color: #009688;
   --dark-color: #343a40;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
@@ -263,7 +263,6 @@ img {
 }
 
 .d-down {
-  /* border-left: 1px solid black; */
   position: absolute;
   background-color: #fff;
 }
@@ -455,7 +454,7 @@ button {
   width: 6px;
   height: 18px;
   border-radius: 20%;
-  background: #03abfc;
+  background: var(--primary-color);
 }
 
 .spinner div:nth-child(1) {
