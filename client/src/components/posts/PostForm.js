@@ -71,7 +71,6 @@ const PostForm = ({addPost}) => {
                         searchOptions={searchOptions}
                     >
                         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => {
-                            console.log(suggestions)
                             return(
                             <Fragment>
                             <input {...getInputProps({ placeholder: "City e.g. Kyiv" })} />
