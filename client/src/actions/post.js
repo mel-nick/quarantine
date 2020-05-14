@@ -3,7 +3,8 @@ import {setAlert} from './alert'
 import {
     GET_POSTS, 
     POST_ERROR, 
-    ADD_POST
+    ADD_POST,
+    DELETE_POST
 } from './types'
 
 //get posts
@@ -41,6 +42,27 @@ export const addPost = formData => async dispatch => {
         })
 
         dispatch (setAlert('Post has been successfully created', 'success'))
+    } catch (err) {
+        dispatch({
+            type: POST_ERROR,
+            payload: {
+                msg: err.response.statusText,
+                status: err.response.status
+            }
+        })
+    }
+}
+
+// delete single post
+export const deletePost = postId => async dispatch => {
+    try {
+        await axios.delete(`/api/posts/${postId}`);
+        dispatch ({
+            type: DELETE_POST,
+            payload: postId
+        })
+
+        dispatch (setAlert('Post has been successfully deleted', 'success'))
     } catch (err) {
         dispatch({
             type: POST_ERROR,

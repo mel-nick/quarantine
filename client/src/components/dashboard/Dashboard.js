@@ -2,12 +2,18 @@ import React, { Fragment, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Spinner from '../layout/Spinner'
-import { getPosts } from '../../actions/post'
+import { getPosts, deletePost } from '../../actions/post'
 import PostForm from '../posts/PostForm'
 import Moment from 'react-moment'
 import Pagination from '../pagination/Pagination'
 
-const Dashboard = ({getPosts, post: {posts, loading} }) => {
+const Dashboard = ({
+                    getPosts, 
+                    deletePost,
+                    auth, 
+                    post: {
+                        posts,
+                        loading} }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
 
@@ -44,6 +50,9 @@ const Dashboard = ({getPosts, post: {posts, loading} }) => {
                         <th>Temperature</th>
                         <th>Comment</th>
                         <th>Date</th>
+                            {!auth.loading && auth.user.email === 'nick.meleshchenko@gmail.com' &&
+                        <th>Delete</th>
+                            }
                         </tr>
                     </thead>
                     <tbody>
@@ -58,6 +67,17 @@ const Dashboard = ({getPosts, post: {posts, loading} }) => {
                                         :  post.temp > 37.5 ? 'bg-danger' : 'bg-success'}`}>{post.temp}</td>
                                         <td>{post.comment}</td>
                                         <td><Moment format="DD-MMM-YYYY HH:mm:ss">{post.date }</Moment></td>
+                                            {!auth.loading && auth.user.email === 'nick.meleshchenko@gmail.com' &&
+                                        <td>
+                                            <button 
+                                                onClick={e=>deletePost(post._id)}
+                                                type="button" 
+                                                className="btn btn-danger" >
+                                                <i className="far fa-trash-alt" />
+                                            </button>
+                                        </td>
+                                            }
+                                         
                                 </tr>
                         )})}
                     </tbody>
@@ -75,10 +95,12 @@ const Dashboard = ({getPosts, post: {posts, loading} }) => {
 
 Dashboard.propTypes = {
     getPosts: PropTypes.func.isRequired,
-    post: PropTypes.object.isRequired
+    post: PropTypes.object.isRequired,
+    auth: PropTypes.object.isRequired,
 }
 const mapStateToProps= state => ({
-    post: state.post
+    post: state.post,
+    auth: state.auth
 })
 
-export default connect(mapStateToProps, { getPosts } )(Dashboard)
+export default connect(mapStateToProps, { getPosts, deletePost } )(Dashboard)
