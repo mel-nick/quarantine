@@ -1,3 +1,6 @@
+## Quarantine
+Fully responsive app to register employee body temperature
+
 Project techonolgy stack:
 - `backend`: node.js, express, mongoDB, JWT
 - `frontend`: React (Hooks), Redux, Bootstrap(custom grid and assets), cssGrid, GoogleMapsApi
