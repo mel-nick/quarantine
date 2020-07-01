@@ -5,7 +5,7 @@ Project techonolgy stack:
 - `backend`: node.js, express, mongoDB, JWT
 - `frontend`: React (Hooks), Redux, Bootstrap(custom grid and assets), cssGrid, GoogleMapsApi
 
-Link on working project: https://quarantine-19.herokuapp.com
+Link on demo: https://quarantine-19.herokuapp.com
 
 1. In root forder run  `npm install`
 
